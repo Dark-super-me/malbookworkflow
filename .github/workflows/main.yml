@@ -7,8 +7,8 @@ on:
   workflow_dispatch:
     
 env:
-  GitHubMail: "miguelmalbrook@gmail.com"
-  GitHubName: "Senpai-sama-afk" 
+  GitHubMail: "vishalkaura2004@gmail.com"
+  GitHubName: "Dark-super-me"
 jobs:
   build:
     runs-on: ubuntu-20.04
@@ -27,11 +27,11 @@ jobs:
          continue-on-error: true
          run: |
            git clone -b main https://${GitHubName}:${{ secrets.GH_TOKEN }}@github.com/Senpai-sama-afk/malbookcompress.git 
-       - name: Running malbookcompress
+       - name: Running malbookworkflow 
          timeout-minutes: 300
          continue-on-error: true
          run: |
-           cd malbookcompress
+           cd malbookworkflow 
            sudo apt-get update && sudo apt -qq install -y git wget pv jq wget python3-dev ffmpeg mediainfo && pip3 install python-decouple telethon requests && pip3 install -r requirements.txt && python3 start.py
            
        - name: Loop workflow
